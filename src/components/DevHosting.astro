@@ -1,0 +1,228 @@
+---
+const features = [
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/>
+    </svg>`,
+    title:  'Sites & applications web',
+    desc:   'Création de sites vitrines, e-commerce, plateformes SaaS et applications métier sur mesure. Stack moderne, rapide, accessible.',
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z"/>
+    </svg>`,
+    title:  'Hébergement mutualisé & VPS',
+    desc:   'Infrastructure serveur France, haute disponibilité. Hébergement sécurisé à partir de tarifs très compétitifs — sans intermédiaire inutile.',
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/>
+    </svg>`,
+    title:  'Intégration IA & automatisation',
+    desc:   'Assistants IA, workflows automatisés, outils de productivité intégrés à votre SI. L\'IA au service de vos équipes, pas à la place.',
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+    </svg>`,
+    title:  'Maintenance & support',
+    desc:   'Mises à jour, sauvegardes automatisées, monitoring, support réactif. Votre outil numérique reste toujours opérationnel.',
+  },
+];
+
+const pricing = [
+  { label: 'Site vitrine',        from: '790',  note: 'Livré en 2 semaines' },
+  { label: 'Hébergement / an',    from: '120',  note: 'Infra France, SSL inclus' },
+  { label: 'Maintenance / mois',  from: '49',   note: 'Monitoring + mises à jour' },
+  { label: 'Sur devis',           from: null,   note: 'Applications métier & SaaS' },
+];
+---
+<section id="developpement" class="relative py-28 md:py-36 overflow-hidden">
+  <!-- Background -->
+  <div class="absolute inset-0 pointer-events-none"
+    style="background: linear-gradient(180deg, #0A0A0A 0%, #0D0C0A 50%, #0A0A0A 100%);">
+  </div>
+  <!-- Top border -->
+  <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-tk-gold/20 to-transparent"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-12">
+
+    <!-- Header -->
+    <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
+      <div class="reveal">
+        <p class="text-xs tracking-[0.3em] uppercase text-tk-gold mb-4">Développement & Hébergement</p>
+        <h2 class="font-serif font-light text-4xl md:text-5xl text-white mb-6 leading-tight">
+          Le digital accessible<br/>
+          <span class="text-gold-grad font-semibold">à toutes les structures</span>
+        </h2>
+        <p class="text-tk-muted text-lg leading-relaxed mb-8">
+          Que vous soyez indépendant, TPE, PME ou association — vous méritez une présence digitale professionnelle, à un coût maîtrisé. Nous concevons, développons et hébergeons vos outils en interne, sans intermédiaire.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          {['TPE / PME', 'Associations', 'Startups', 'Indépendants', 'Collectivités'].map(tag => (
+            <span
+              class="text-xs tracking-wide px-3 py-1.5 border border-tk-gold/20 text-tk-gold/70"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Pricing cards -->
+      <div class="grid grid-cols-2 gap-4 reveal" style="transition-delay: 150ms;">
+        {pricing.map(p => (
+          <div class="card-glass p-5">
+            <p class="text-xs tracking-[0.15em] uppercase text-tk-muted mb-3">{p.label}</p>
+            {p.from ? (
+              <p class="font-serif mb-1">
+                <span class="text-xs text-tk-muted">à partir de </span>
+                <span class="text-2xl font-bold text-gold-grad">{p.from}€</span>
+              </p>
+            ) : (
+              <p class="text-2xl font-serif font-bold text-gold-grad mb-1">Sur devis</p>
+            )}
+            <p class="text-xs text-tk-muted">{p.note}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Features grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+      {features.map((f, i) => (
+        <div class="reveal card-glass p-6" style={`transition-delay: ${i * 80}ms;`}>
+          <div
+            class="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+            style="background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.15);"
+          >
+            <span class="text-tk-gold" set:html={f.icon} />
+          </div>
+          <h3 class="font-semibold text-white text-sm mb-2">{f.title}</h3>
+          <p class="text-xs text-tk-muted leading-relaxed">{f.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Portfolio / Réalisations -->
+    <div class="reveal">
+      <div class="flex items-center gap-6 mb-10">
+        <div>
+          <p class="text-xs tracking-[0.3em] uppercase text-tk-gold mb-1">Réalisations</p>
+          <h3 class="font-serif text-3xl font-light text-white">
+            Quelques projets <span class="text-gold-grad font-semibold">concrets</span>
+          </h3>
+        </div>
+        <div class="flex-1 h-px bg-gradient-to-r from-tk-gold/20 to-transparent hidden md:block"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Lesensia.com -->
+        <a
+          href="https://lesensia.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card-glass group overflow-hidden block"
+        >
+          <!-- Preview banner -->
+          <div
+            class="relative h-44 flex items-center justify-center overflow-hidden"
+            style="background: linear-gradient(135deg, #0A1628 0%, #0D2040 50%, #0A1628 100%);"
+          >
+            <div class="text-center px-6">
+              <p class="font-serif text-2xl font-bold mb-1" style="color: #4A90E2;">Lesensia</p>
+              <p class="text-xs tracking-widest uppercase" style="color: #7BA8D4;">Plateforme de gestion BTP</p>
+            </div>
+            <!-- Hover overlay -->
+            <div
+              class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+              style="background: rgba(0,0,0,0.7);"
+            >
+              <span class="text-sm text-tk-gold border border-tk-gold/50 px-4 py-2">Voir le site →</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <p class="font-semibold text-white text-sm">lesensia.com</p>
+                <p class="text-xs text-tk-muted">Plateforme SaaS BTP</p>
+              </div>
+              <svg class="text-tk-gold shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+              </svg>
+            </div>
+            <p class="text-xs text-tk-muted leading-relaxed mb-4">
+              Application complète de gestion de devis, facturation, chronométrage et estimateur IA pour les artisans du bâtiment.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              {['SaaS', 'IA intégrée', 'React', 'FastAPI', 'PostgreSQL'].map(t => (
+                <span class="text-xs px-2 py-0.5" style="background: rgba(201,168,76,0.08); color: rgba(201,168,76,0.8); border: 1px solid rgba(201,168,76,0.15);">{t}</span>
+              ))}
+            </div>
+          </div>
+        </a>
+
+        <!-- TKonsulting.fr (this site) -->
+        <div class="card-glass overflow-hidden">
+          <div
+            class="relative h-44 flex items-center justify-center overflow-hidden"
+            style="background: linear-gradient(135deg, #0A0A0A 0%, #161410 50%, #0A0A0A 100%);"
+          >
+            <div class="text-center">
+              <p class="font-serif text-2xl font-bold text-gold-grad mb-1">TKonsulting</p>
+              <p class="text-xs tracking-widest uppercase text-tk-muted">Site vitrine premium</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <p class="font-semibold text-white text-sm">tkonsulting.fr</p>
+                <p class="text-xs text-tk-muted">Site vitrine</p>
+              </div>
+              <span class="text-xs px-2 py-0.5 text-tk-gold border border-tk-gold/30">Ce site</span>
+            </div>
+            <p class="text-xs text-tk-muted leading-relaxed mb-4">
+              Site vitrine haut de gamme, identité noir & or, 100% statique, performances maximales et SEO optimisé.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              {['Astro 5', 'Tailwind CSS', 'Static', 'SEO'].map(t => (
+                <span class="text-xs px-2 py-0.5" style="background: rgba(201,168,76,0.08); color: rgba(201,168,76,0.8); border: 1px solid rgba(201,168,76,0.15);">{t}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Slot prochain projet -->
+        <a
+          href="mailto:tkonsulting79@gmail.com?subject=Projet%20web%20TKonsulting"
+          class="card-glass overflow-hidden group flex flex-col"
+          style="border-style: dashed;"
+        >
+          <div
+            class="flex-1 flex flex-col items-center justify-center py-16 px-6 text-center"
+            style="min-height: 176px;"
+          >
+            <div
+              class="w-14 h-14 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+              style="background: rgba(201,168,76,0.08); border: 1px dashed rgba(201,168,76,0.3);"
+            >
+              <svg class="text-tk-gold" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
+              </svg>
+            </div>
+            <p class="font-semibold text-white text-sm mb-1 group-hover:text-tk-gold-light transition-colors">Votre projet ici</p>
+            <p class="text-xs text-tk-muted">Discutons de votre site</p>
+          </div>
+          <div class="p-6 pt-0 text-center">
+            <span class="text-xs text-tk-gold border-b border-tk-gold/40 pb-0.5">Prendre contact →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom border -->
+  <div class="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-tk-gold/20 to-transparent"></div>
+</section>

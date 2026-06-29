@@ -1,0 +1,199 @@
+---
+const pillars = [
+  {
+    num: '01',
+    title: 'Audit des connaissances',
+    desc: 'Cartographie de vos savoirs critiques, identification des silos, des experts et des zones de vulnérabilité (départs, dépendances humaines).',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+    </svg>`,
+  },
+  {
+    num: '02',
+    title: 'Structuration & documentation',
+    desc: 'Organisation des processus, rédaction de procédures, bases de connaissances internes, wikis métier et référentiels documentaires.',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+    </svg>`,
+  },
+  {
+    num: '03',
+    title: 'Digital Workplace & portail interne',
+    desc: 'Déploiement d\'un environnement numérique de travail centralisé : intranet, portail documentaire, espaces collaboratifs et flux d\'information maîtrisés.',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3"/>
+    </svg>`,
+  },
+  {
+    num: '04',
+    title: 'Communautés de pratique',
+    desc: 'Animation de communautés d\'experts internes, mise en place de rituels de partage et de mécanismes de transfert intergénérationnel des savoirs.',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+    </svg>`,
+  },
+  {
+    num: '05',
+    title: 'IA & recherche sémantique',
+    desc: 'Indexation intelligente de vos documents, moteurs de recherche interne augmentés par l\'IA, assistants conversationnels sur vos propres données.',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/>
+    </svg>`,
+  },
+  {
+    num: '06',
+    title: 'Conduite du changement',
+    desc: 'Accompagnement humain indispensable à toute démarche KM : formation, adoption des outils, gouvernance et mesure de maturité (référentiel ISO 30401).',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3m-6.063 16.658l.26-1.477m2.605-14.772l.26-1.477m0 17.726l-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205L12 12m6.894 5.785l-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864l-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495"/>
+    </svg>`,
+  },
+];
+
+const outcomes = [
+  { val: 'Moins de silos',     desc: 'Information accessible à tous, au bon moment' },
+  { val: 'Risque réduit',      desc: 'Continuité assurée même en cas de départ clé' },
+  { val: 'Décision plus vite', desc: 'Moins de temps à chercher, plus à agir' },
+  { val: 'Capital préservé',   desc: 'Savoir-faire documenté, transmissible, durable' },
+];
+---
+<section id="knowledge" class="relative py-28 md:py-36 overflow-hidden">
+
+  <!-- Subtle grid background -->
+  <div
+    class="absolute inset-0 opacity-[0.02] pointer-events-none"
+    style="background-image: radial-gradient(rgba(201,168,76,1) 1px, transparent 1px); background-size: 32px 32px;"
+  ></div>
+
+  <!-- Ambient glow left -->
+  <div
+    class="absolute -left-40 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"
+    style="background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%);"
+  ></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-12">
+
+    <!-- Header block -->
+    <div class="grid lg:grid-cols-2 gap-16 items-end mb-20">
+
+      <div class="reveal">
+        <p class="text-xs tracking-[0.3em] uppercase text-tk-gold mb-4">Knowledge Management</p>
+        <h2 class="font-serif font-light text-4xl md:text-5xl text-white mb-6 leading-tight">
+          Votre savoir-faire est<br/>
+          <span class="text-gold-grad font-semibold">votre actif le plus précieux.</span><br/>
+          <span class="font-light text-3xl md:text-4xl text-tk-muted">Est-il bien protégé ?</span>
+        </h2>
+        <p class="text-tk-muted text-lg leading-relaxed">
+          Dans chaque organisation, des connaissances critiques restent dans les têtes, non documentées, non transmises. Un départ, une réorganisation, et c'est des années d'expertise perdues.
+          Le KM transforme ce risque silencieux en avantage concurrentiel durable.
+        </p>
+      </div>
+
+      <!-- ISO 30401 badge + outcomes -->
+      <div class="reveal space-y-4" style="transition-delay: 150ms;">
+        <!-- ISO badge -->
+        <div
+          class="flex items-center gap-4 p-5"
+          style="background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.2);"
+        >
+          <div
+            class="w-14 h-14 shrink-0 flex items-center justify-center rounded-full"
+            style="background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3);"
+          >
+            <svg class="text-tk-gold" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-semibold text-white text-sm">Référentiel ISO 30401</p>
+            <p class="text-xs text-tk-muted leading-relaxed">
+              Nos démarches s'appuient sur la norme internationale de management des connaissances — gage de rigueur et d'alignement avec les meilleures pratiques mondiales.
+            </p>
+          </div>
+        </div>
+
+        <!-- Outcomes -->
+        <div class="grid grid-cols-2 gap-3">
+          {outcomes.map(o => (
+            <div class="card-glass p-4">
+              <p class="font-serif text-base font-semibold text-gold-grad mb-1">{o.val}</p>
+              <p class="text-xs text-tk-muted leading-snug">{o.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Visual divider: "Notre approche KM" -->
+    <div class="flex items-center gap-6 mb-12 reveal">
+      <div class="h-px flex-1 bg-gradient-to-r from-transparent to-tk-gold/20"></div>
+      <p class="text-xs tracking-[0.3em] uppercase text-tk-gold whitespace-nowrap">Notre approche en 6 étapes</p>
+      <div class="h-px flex-1 bg-gradient-to-l from-transparent to-tk-gold/20"></div>
+    </div>
+
+    <!-- 6 pillars grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+      {pillars.map((p, i) => (
+        <div
+          class="reveal group relative card-glass p-7 overflow-hidden"
+          style={`transition-delay: ${i * 70}ms;`}
+        >
+          <!-- Background number (watermark) — bien visible -->
+          <span
+            class="absolute top-2 right-4 font-serif font-bold select-none pointer-events-none"
+            style="font-size: 5rem; line-height: 1; color: rgba(201,168,76,0.13);"
+          >
+            {p.num}
+          </span>
+
+          <!-- Icon -->
+          <div
+            class="w-12 h-12 rounded-lg flex items-center justify-center mb-5"
+            style="background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2);"
+          >
+            <span class="text-tk-gold" set:html={p.icon} />
+          </div>
+
+          <!-- Step number pill -->
+          <p class="text-sm font-semibold tracking-[0.25em] text-tk-gold mb-3">{p.num}</p>
+
+          <h3 class="font-semibold text-white text-lg mb-3 group-hover:text-tk-gold-light transition-colors">{p.title}</h3>
+          <p class="text-base text-tk-muted leading-relaxed">{p.desc}</p>
+
+          <!-- Bottom gold accent on hover -->
+          <div
+            class="absolute bottom-0 left-0 h-0.5 w-0 group-hover:w-full transition-all duration-500"
+            style="background: linear-gradient(90deg, #C9A84C, #E2C97A);"
+          ></div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA inline -->
+    <div
+      class="reveal flex flex-col md:flex-row items-center justify-between gap-8 p-8 lg:p-10"
+      style="background: rgba(201,168,76,0.04); border: 1px solid rgba(201,168,76,0.15);"
+    >
+      <div>
+        <p class="font-serif text-2xl text-white mb-2">
+          Vous voulez valoriser votre capital immatériel ?
+        </p>
+        <p class="text-tk-muted text-sm">
+          Audit initial offert pour les structures de moins de 50 personnes.
+        </p>
+      </div>
+      <a
+        href="mailto:tkonsulting79@gmail.com?subject=Audit%20Knowledge%20Management%20TKonsulting"
+        class="btn-gold shrink-0"
+      >
+        Demander un audit KM
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-tk-gold/20 to-transparent"></div>
+</section>

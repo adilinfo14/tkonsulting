@@ -1,0 +1,131 @@
+---
+const links = [
+  { href: '/#services',      label: 'Services' },
+  { href: '/#developpement', label: 'Dev & Web' },
+  { href: '/#knowledge',     label: 'Knowledge' },
+  { href: '/#methode',       label: 'Méthode' },
+  { href: '/contact',        label: 'Contact' },
+];
+---
+<header
+  id="site-header"
+  class="fixed top-0 inset-x-0 z-50 transition-all duration-300"
+  style="background: transparent;"
+>
+  <nav class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-20">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-1 shrink-0" aria-label="TKonsulting accueil">
+      <span class="font-serif text-xl font-semibold tracking-widest">
+        <span class="text-gold-grad">TK</span><span class="text-white font-light tracking-wider">ONSULTING</span>
+      </span>
+    </a>
+
+    <!-- Desktop links -->
+    <ul class="hidden md:flex items-center gap-8">
+      {links.map(l => (
+        <li>
+          <a
+            href={l.href}
+            class="text-sm font-medium tracking-widest uppercase text-tk-muted hover:text-tk-gold-light transition-colors duration-200"
+          >
+            {l.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- CTA -->
+    <a
+      href="mailto:tkonsulting79@gmail.com?subject=Prise%20de%20contact%20TKonsulting"
+      class="hidden md:inline-flex btn-gold text-xs"
+    >
+      Prendre contact
+    </a>
+
+    <!-- Mobile burger -->
+    <button
+      id="burger"
+      class="md:hidden flex flex-col gap-1.5 p-2"
+      aria-label="Menu"
+      aria-expanded="false"
+    >
+      <span class="w-6 h-0.5 bg-tk-gold transition-all" id="b1"></span>
+      <span class="w-6 h-0.5 bg-tk-gold transition-all" id="b2"></span>
+      <span class="w-4 h-0.5 bg-tk-gold transition-all" id="b3"></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden bg-tk-dark border-t border-tk-border px-6 pb-6"
+  >
+    <ul class="flex flex-col gap-4 pt-4">
+      {links.map(l => (
+        <li>
+          <a
+            href={l.href}
+            class="block text-sm font-medium tracking-widest uppercase text-tk-muted hover:text-tk-gold transition-colors py-2"
+          >
+            {l.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <a
+      href="mailto:tkonsulting79@gmail.com?subject=Prise%20de%20contact%20TKonsulting"
+      class="btn-gold mt-4 w-full justify-center text-xs"
+    >
+      Prendre contact
+    </a>
+  </div>
+</header>
+
+<script>
+  const header  = document.getElementById('site-header')!;
+  const burger  = document.getElementById('burger')!;
+  const menu    = document.getElementById('mobile-menu')!;
+  const b1 = document.getElementById('b1')!;
+  const b2 = document.getElementById('b2')!;
+  const b3 = document.getElementById('b3')!;
+
+  // Scroll: add frosted glass background after 60px
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      header.style.background = 'rgba(10,10,10,0.92)';
+      header.style.backdropFilter = 'blur(12px)';
+      header.style.borderBottom = '1px solid rgba(201,168,76,0.08)';
+    } else {
+      header.style.background = 'transparent';
+      header.style.backdropFilter = 'none';
+      header.style.borderBottom = 'none';
+    }
+  }, { passive: true });
+
+  // Burger toggle
+  let open = false;
+  burger.addEventListener('click', () => {
+    open = !open;
+    menu.classList.toggle('hidden', !open);
+    burger.setAttribute('aria-expanded', String(open));
+    if (open) {
+      b1.style.transform = 'rotate(45deg) translate(4px, 4px)';
+      b2.style.opacity   = '0';
+      b3.style.transform = 'rotate(-45deg) translate(2px, -2px)';
+      b3.style.width     = '24px';
+    } else {
+      b1.style.transform = '';
+      b2.style.opacity   = '';
+      b3.style.transform = '';
+      b3.style.width     = '';
+    }
+  });
+
+  // Close on link click
+  menu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      open = false;
+      menu.classList.add('hidden');
+    });
+  });
+</script>

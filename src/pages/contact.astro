@@ -1,0 +1,207 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout
+  title="Contact — TKonsulting"
+  description="Prenez contact avec TKonsulting pour un premier échange gratuit et sans engagement sur votre projet."
+>
+  <Nav />
+  <main class="min-h-screen pt-32 pb-28">
+    <div class="max-w-5xl mx-auto px-6 lg:px-12">
+
+      <!-- Header -->
+      <div class="text-center mb-20 reveal">
+        <p class="text-xs tracking-[0.3em] uppercase text-tk-gold mb-4">Parlons-en</p>
+        <h1 class="font-serif font-light text-4xl md:text-6xl text-white mb-6">
+          Démarrons la<br/>
+          <span class="text-gold-grad font-semibold">conversation</span>
+        </h1>
+        <p class="max-w-xl mx-auto text-tk-muted text-lg leading-relaxed">
+          Un premier échange de 30 minutes, gratuit et sans engagement. Décrivez votre projet, nous vous répondons sous 24h.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+        <!-- Left: Contact form (mailto) -->
+        <div class="reveal card-glass p-8 lg:p-10">
+          <h2 class="font-serif text-2xl text-white mb-8">Envoyez-nous un message</h2>
+
+          <form
+            id="contact-form"
+            class="space-y-5"
+            novalidate
+          >
+            <div>
+              <label class="block text-xs tracking-[0.15em] uppercase text-tk-muted mb-2" for="name">
+                Nom complet *
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Jean Dupont"
+                class="w-full bg-tk-dark border border-tk-border rounded-none px-4 py-3 text-sm text-white placeholder-tk-muted/50 focus:outline-none focus:border-tk-gold/50 transition-colors"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xs tracking-[0.15em] uppercase text-tk-muted mb-2" for="email">
+                Email professionnel *
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="jean@entreprise.fr"
+                class="w-full bg-tk-dark border border-tk-border rounded-none px-4 py-3 text-sm text-white placeholder-tk-muted/50 focus:outline-none focus:border-tk-gold/50 transition-colors"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xs tracking-[0.15em] uppercase text-tk-muted mb-2" for="sujet">
+                Votre besoin
+              </label>
+              <select
+                id="sujet"
+                name="sujet"
+                class="w-full bg-tk-dark border border-tk-border rounded-none px-4 py-3 text-sm text-white focus:outline-none focus:border-tk-gold/50 transition-colors appearance-none"
+                style="background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23C9A84C' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E\"); background-repeat: no-repeat; background-position: right 16px center;"
+              >
+                <option value="" class="bg-tk-dark">-- Sélectionner --</option>
+                <option value="conseil" class="bg-tk-dark">Conseil stratégique</option>
+                <option value="pilotage" class="bg-tk-dark">Pilotage de projet</option>
+                <option value="automatisation" class="bg-tk-dark">Automatisation</option>
+                <option value="branding" class="bg-tk-dark">Image de marque</option>
+                <option value="autre" class="bg-tk-dark">Autre</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs tracking-[0.15em] uppercase text-tk-muted mb-2" for="message">
+                Décrivez votre projet *
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows="5"
+                placeholder="Contexte de votre projet, objectifs, contraintes, délais..."
+                class="w-full bg-tk-dark border border-tk-border rounded-none px-4 py-3 text-sm text-white placeholder-tk-muted/50 focus:outline-none focus:border-tk-gold/50 transition-colors resize-none"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-gold w-full justify-center">
+              Envoyer le message
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: Info cards -->
+        <div class="space-y-6 reveal" style="transition-delay: 150ms;">
+
+          <!-- Direct email -->
+          <div class="card-glass p-6">
+            <div class="flex items-start gap-4">
+              <div
+                class="w-12 h-12 rounded-full shrink-0 flex items-center justify-center"
+                style="background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2);"
+              >
+                <svg class="text-tk-gold" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs tracking-[0.15em] uppercase text-tk-gold mb-1">Email direct</p>
+                <a
+                  href="mailto:tkonsulting79@gmail.com"
+                  class="text-white hover:text-tk-gold-light transition-colors"
+                >
+                  tkonsulting79@gmail.com
+                </a>
+                <p class="text-xs text-tk-muted mt-1">Réponse garantie sous 24h ouvrées</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- LinkedIn -->
+          <div class="card-glass p-6">
+            <div class="flex items-start gap-4">
+              <div
+                class="w-12 h-12 rounded-full shrink-0 flex items-center justify-center"
+                style="background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2);"
+              >
+                <svg class="text-tk-gold" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs tracking-[0.15em] uppercase text-tk-gold mb-1">LinkedIn</p>
+                <a
+                  href="https://www.linkedin.com/company/tkonsulting"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-white hover:text-tk-gold-light transition-colors"
+                >
+                  TKonsulting
+                </a>
+                <p class="text-xs text-tk-muted mt-1">Suivez notre actualité</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Engagement -->
+          <div class="card-glass p-6">
+            <p class="text-xs tracking-[0.15em] uppercase text-tk-gold mb-4">Notre engagement</p>
+            <ul class="space-y-3">
+              {[
+                'Réponse sous 24h ouvrées',
+                'Premier échange 100% gratuit',
+                'Aucun engagement à l\'issue du premier contact',
+                'Confidentialité absolue de vos informations',
+              ].map(item => (
+                <li class="flex items-start gap-3 text-sm text-tk-muted">
+                  <svg class="shrink-0 mt-0.5 text-tk-gold" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+document.getElementById('contact-form')?.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const form    = e.target as HTMLFormElement;
+  const name    = (form.querySelector('#name')    as HTMLInputElement).value.trim();
+  const email   = (form.querySelector('#email')   as HTMLInputElement).value.trim();
+  const sujet   = (form.querySelector('#sujet')   as HTMLSelectElement).value;
+  const message = (form.querySelector('#message') as HTMLTextAreaElement).value.trim();
+
+  if (!name || !email || !message) {
+    alert('Veuillez remplir tous les champs obligatoires.');
+    return;
+  }
+
+  const subject = encodeURIComponent(`Demande de contact TKonsulting — ${sujet || 'Autre'}`);
+  const body    = encodeURIComponent(
+    `Bonjour,\n\nNom : ${name}\nEmail : ${email}\nBesoin : ${sujet || 'Non précisé'}\n\nMessage :\n${message}\n\nCordialement,\n${name}`
+  );
+
+  window.location.href = `mailto:tkonsulting79@gmail.com?subject=${subject}&body=${body}`;
+});
+</script>

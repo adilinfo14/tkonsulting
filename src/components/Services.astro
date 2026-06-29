@@ -1,0 +1,97 @@
+---
+const services = [
+  {
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/>
+    </svg>`,
+    label:    'CONSEIL',
+    title:    'Conseil stratégique',
+    desc:     "Nous analysons votre situation, identifions vos leviers de croissance et vous guidons dans vos décisions clés. Un regard externe, structuré et orienté résultats.",
+    items:    ['Audit stratégique et diagnostic', 'Définition de feuille de route', 'Accompagnement à la décision', 'Restructuration et optimisation'],
+    delay:    '0ms',
+  },
+  {
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/>
+    </svg>`,
+    label:    'PILOTAGE',
+    title:    'Pilotage de projets',
+    desc:     "Nous prenons en charge la conduite opérationnelle de vos projets complexes — de la planification à la livraison — en garantissant délais, budget et qualité.",
+    items:    ['Chef de projet externalisé', 'Planification et gouvernance', 'Coordination des équipes & parties prenantes', 'Reporting et pilotage par les KPIs'],
+    delay:    '120ms',
+  },
+  {
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/>
+    </svg>`,
+    label:    'AUTOMATISATION & BRANDING',
+    title:    'Automatisation & Image de marque',
+    desc:     "Nous digitalisons vos processus métier et forgeons une identité de marque qui vous différencie durablement. L'automatisation libère vos équipes ; le branding attire vos clients.",
+    items:    ['Automatisation des workflows métier', 'Identité visuelle et stratégie de marque', 'Transformation et maturité digitale', 'Développement et intégration d\'outils IA'],
+    delay:    '240ms',
+  },
+];
+---
+<section id="services" class="relative py-28 md:py-36">
+  <!-- Background grid -->
+  <div
+    class="absolute inset-0 opacity-[0.025] pointer-events-none"
+    style="background-image: linear-gradient(rgba(201,168,76,1) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,1) 1px, transparent 1px); background-size: 60px 60px;"
+  ></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-12">
+
+    <!-- Header -->
+    <div class="text-center mb-20 reveal">
+      <p class="text-xs tracking-[0.3em] uppercase text-tk-gold mb-4">Ce que nous faisons</p>
+      <h2 class="font-serif font-light text-4xl md:text-5xl text-white mb-6">
+        Trois piliers, <span class="text-gold-grad font-semibold">un seul objectif</span>
+      </h2>
+      <p class="max-w-xl mx-auto text-tk-muted text-lg leading-relaxed">
+        Conseil, pilotage et transformation : nos expertises s'articulent pour couvrir l'intégralité de votre trajectoire de croissance.
+      </p>
+    </div>
+
+    <!-- Cards grid -->
+    <div class="grid md:grid-cols-3 gap-8">
+      {services.map((s) => (
+        <div
+          class="card-glass p-8 lg:p-10 reveal"
+          style={`transition-delay: ${s.delay};`}
+        >
+          <!-- Icon circle -->
+          <div
+            class="w-16 h-16 rounded-full flex items-center justify-center mb-6"
+            style="background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2);"
+          >
+            <span class="text-tk-gold" set:html={s.icon} />
+          </div>
+
+          <!-- Label -->
+          <p class="text-xs tracking-[0.25em] uppercase text-tk-gold mb-2">{s.label}</p>
+
+          <!-- Title -->
+          <h3 class="font-serif text-2xl font-semibold text-white mb-4">{s.title}</h3>
+
+          <!-- Desc -->
+          <p class="text-tk-muted text-base leading-relaxed mb-6">{s.desc}</p>
+
+          <!-- Gold separator -->
+          <div class="h-px w-10 bg-gradient-to-r from-tk-gold to-transparent mb-6 opacity-60"></div>
+
+          <!-- Feature list -->
+          <ul class="space-y-3">
+            {s.items.map(item => (
+              <li class="flex items-start gap-3 text-base text-tk-text">
+                <svg class="shrink-0 mt-0.5 text-tk-gold" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
