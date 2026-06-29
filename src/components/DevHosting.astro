@@ -30,11 +30,11 @@ const features = [
   },
 ];
 
-const pricing = [
-  { label: 'Site vitrine',        from: '790',  note: 'Livré en 2 semaines' },
-  { label: 'Hébergement / an',    from: '120',  note: 'Infra France, SSL inclus' },
-  { label: 'Maintenance / mois',  from: '49',   note: 'Monitoring + mises à jour' },
-  { label: 'Sur devis',           from: null,   note: 'Applications métier & SaaS' },
+const atouts = [
+  { icon: '⚡', label: 'Délai maîtrisé',       desc: 'Sites livrés en 1 à 3 semaines, applications selon complexité.' },
+  { icon: '🇫🇷', label: 'Infra 100% France',   desc: 'Hébergement sur serveurs français. SSL inclus, RGPD natif.' },
+  { icon: '🔧', label: 'Maintenance incluse',   desc: 'Monitoring, mises à jour et support réactif sur tous nos projets.' },
+  { icon: '💬', label: 'Tarif sur devis',       desc: 'Chaque projet est unique. Contactez-nous pour un devis personnalisé.' },
 ];
 ---
 <section id="developpement" class="relative py-28 md:py-36 overflow-hidden">
@@ -69,20 +69,13 @@ const pricing = [
         </div>
       </div>
 
-      <!-- Pricing cards -->
+      <!-- Atouts cards -->
       <div class="grid grid-cols-2 gap-4 reveal" style="transition-delay: 150ms;">
-        {pricing.map(p => (
+        {atouts.map(a => (
           <div class="card-glass p-5">
-            <p class="text-xs tracking-[0.15em] uppercase text-tk-muted mb-3">{p.label}</p>
-            {p.from ? (
-              <p class="font-serif mb-1">
-                <span class="text-xs text-tk-muted">à partir de </span>
-                <span class="text-2xl font-bold text-gold-grad">{p.from}€</span>
-              </p>
-            ) : (
-              <p class="text-2xl font-serif font-bold text-gold-grad mb-1">Sur devis</p>
-            )}
-            <p class="text-xs text-tk-muted">{p.note}</p>
+            <p class="text-2xl mb-3">{a.icon}</p>
+            <p class="text-sm font-semibold text-white mb-2">{a.label}</p>
+            <p class="text-xs text-tk-muted leading-relaxed">{a.desc}</p>
           </div>
         ))}
       </div>
