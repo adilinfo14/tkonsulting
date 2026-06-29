@@ -51,7 +51,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 
     <title>{title}</title>
 
-    <style>
+    <style is:global>
       /* Global resets */
       *, *::before, *::after { box-sizing: border-box; }
 
