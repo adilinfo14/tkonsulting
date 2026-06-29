@@ -102,30 +102,31 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 
       /* Button styles */
       .btn-gold {
-        display: inline-flex; align-items: center; gap: 8px;
-        padding: 14px 32px;
+        display: inline-flex; align-items: center; gap: 10px;
+        padding: 17px 44px;
         background: linear-gradient(135deg, #C9A84C 0%, #E2C97A 50%, #C9A84C 100%);
         background-size: 200% auto;
         color: #0A0A0A;
         font-family: 'Inter', sans-serif;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 0.875rem;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
         border: none;
         cursor: pointer;
         transition: background-position 0.4s ease, box-shadow 0.3s ease, transform 0.2s ease;
         text-decoration: none;
+        box-shadow: 0 4px 24px rgba(201,168,76,0.2);
       }
       .btn-gold:hover {
         background-position: right center;
-        box-shadow: 0 0 30px rgba(201,168,76,0.35);
-        transform: translateY(-1px);
+        box-shadow: 0 0 40px rgba(201,168,76,0.5);
+        transform: translateY(-2px);
       }
 
       .btn-outline {
-        display: inline-flex; align-items: center; gap: 8px;
-        padding: 13px 31px;
+        display: inline-flex; align-items: center; gap: 10px;
+        padding: 16px 40px;
         background: transparent;
         color: #E2C97A;
         font-family: 'Inter', sans-serif;
@@ -141,7 +142,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       .btn-outline:hover {
         border-color: #E2C97A;
         color: #fff;
-        background: rgba(201,168,76,0.08);
+        background: rgba(201,168,76,0.1);
+        box-shadow: 0 0 24px rgba(201,168,76,0.12);
+        transform: translateY(-2px);
       }
 
       /* Card glass effect */
