@@ -14,15 +14,7 @@ const links = [
       <!-- Brand -->
       <div class="md:col-span-1">
         <a href="/" class="inline-block mb-4">
-          <img
-            src="/logo-tk-horizontal.png"
-            alt="TKonsulting"
-            class="h-10 w-auto"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-          />
-          <span
-            class="font-serif text-2xl hidden"
-          >
+          <span class="font-serif text-2xl">
             <span class="text-gold-grad font-bold">TK</span><span class="text-white font-light tracking-widest text-lg">ONSULTING</span>
           </span>
         </a>
@@ -44,14 +36,24 @@ const links = [
         <ul class="space-y-3">
           {links.map(l => (
             <li>
-              <a
-                href={l.href}
-                class="text-sm text-tk-muted hover:text-tk-gold-light transition-colors"
-              >
+              <a href={l.href} class="text-sm text-tk-muted hover:text-tk-gold-light transition-colors">
                 {l.label}
               </a>
             </li>
           ))}
+          <li class="pt-2 border-t border-tk-border mt-2">
+            <a
+              href="https://lesensia.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm text-tk-muted hover:text-tk-gold-light transition-colors flex items-center gap-2"
+            >
+              lesensia.com
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-tk-gold/50">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+              </svg>
+            </a>
+          </li>
         </ul>
       </div>
 
