@@ -1,0 +1,352 @@
+---
+// Page de démonstration — thème blanc + or
+// Le site actuel (/) reste en thème sombre
+---
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TKonsulting — Aperçu thème clair</title>
+  <meta name="robots" content="noindex" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #FEFCF8;
+      --bg-alt:   #F9F5EE;
+      --text:     #1A1714;
+      --muted:    #6B6560;
+      --border:   rgba(201,168,76,0.2);
+      --gold:     #C9A84C;
+      --gold2:    #E2C97A;
+      --dark:     #0A0A0A;
+    }
+
+    html { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); }
+
+    body { background: var(--bg); }
+
+    /* -------- TYPOGRAPHIE -------- */
+    .serif { font-family: 'Cormorant Garamond', 'Georgia', serif; }
+
+    .gold-text {
+      background: linear-gradient(135deg, #C9A84C 0%, #E2C97A 40%, #C9A84C 80%, #A8872A 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* -------- REVEAL -------- */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* -------- BOUTONS -------- */
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 40px;
+      background: linear-gradient(135deg, #C9A84C 0%, #E2C97A 50%, #C9A84C 100%);
+      background-size: 200% auto;
+      color: #0A0A0A; font-weight: 700;
+      font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: background-position .4s, box-shadow .3s, transform .2s;
+      box-shadow: 0 4px 24px rgba(201,168,76,0.25);
+    }
+    .btn-gold:hover {
+      background-position: right center;
+      box-shadow: 0 0 40px rgba(201,168,76,0.4);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-dark {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 15px 36px;
+      background: transparent; color: var(--text);
+      font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid rgba(26,23,20,0.3);
+      transition: border-color .3s, background .3s, transform .2s;
+    }
+    .btn-outline-dark:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(201,168,76,0.05);
+      transform: translateY(-2px);
+    }
+
+    /* -------- CARTES -------- */
+    .card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+      transition: box-shadow .3s, transform .3s, border-color .3s;
+    }
+    .card:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.09);
+      border-color: rgba(201,168,76,0.4);
+      transform: translateY(-4px);
+    }
+
+    /* -------- NAV -------- */
+    .nav-wrap {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      background: rgba(254,252,248,0.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+    .nav-inner {
+      max-width: 1280px; margin: 0 auto;
+      padding: 0 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; letter-spacing: .15em; text-decoration: none; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { text-decoration: none; font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* -------- SEPARATEUR OR -------- */
+    .gold-rule {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+    }
+
+    /* -------- BADGE RETOUR -------- */
+    .badge-back {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 100;
+      background: var(--dark); color: #fff;
+      font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
+      padding: 10px 20px; text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: background .2s;
+    }
+    .badge-back:hover { background: #1a1a1a; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav-wrap">
+    <nav class="nav-inner">
+      <a href="/clair" class="nav-logo">
+        <span class="gold-text" style="font-weight:700;">TK</span><span style="color:#1A1714; font-weight:300; letter-spacing:.2em;">ONSULTING</span>
+      </a>
+      <ul class="nav-links" style="display:none;" id="desklinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#methode">Méthode</a></li>
+        <li><a href="#pourquoi">Pourquoi nous</a></li>
+      </ul>
+      <a href="/contact" class="btn-gold" style="font-size:.7rem; padding:12px 28px;">Prendre contact</a>
+    </nav>
+    <style>
+      @media(min-width:768px){ #desklinks { display:flex !important; } }
+    </style>
+  </header>
+
+  <!-- HERO -->
+  <section style="min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:7rem 1.5rem 4rem; text-align:center; background: radial-gradient(ellipse 80% 60% at 50% 40%, #FFF8EC 0%, #FEFCF8 70%);">
+
+    <!-- Logo -->
+    <div style="margin-bottom:2rem;">
+      <img src="/logo-tk.png" alt="TKonsulting"
+        style="height:11rem; width:auto; filter: drop-shadow(0 0 40px rgba(201,168,76,0.2));"
+        onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';" />
+      <div id="logo-fallback" style="display:none; width:10rem; height:10rem; border-radius:50%; border:1.5px solid #C9A84C; background:radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%); align-items:center; justify-content:center; margin:0 auto;">
+        <span class="serif gold-text" style="font-size:4rem; font-weight:700;">TK</span>
+      </div>
+    </div>
+
+    <!-- Séparateur -->
+    <div style="display:flex; align-items:center; justify-content:center; gap:1rem; margin-bottom:.75rem;">
+      <div style="height:1px; width:4rem; background:linear-gradient(90deg,transparent,rgba(201,168,76,0.5));"></div>
+      <svg width="6" height="6" viewBox="0 0 8 8" fill="#C9A84C"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
+      <div style="height:1px; width:4rem; background:linear-gradient(270deg,transparent,rgba(201,168,76,0.5));"></div>
+    </div>
+
+    <p style="font-size:.7rem; letter-spacing:.28em; text-transform:uppercase; color:rgba(201,168,76,0.8); margin-bottom:2.5rem;">
+      Stratégie &nbsp;·&nbsp; Projets &nbsp;·&nbsp; Image de Marque
+    </p>
+
+    <h1 class="serif reveal visible" style="font-size:clamp(2.8rem,7vw,5.5rem); font-weight:300; line-height:1.05; color:#1A1714; max-width:900px; margin-bottom:1.5rem;">
+      Pilotez vos projets.<br/>
+      <span class="gold-text" style="font-weight:600; font-style:italic;">Transformez</span> vos idées.<br/>
+      Automatisez votre succès.
+    </h1>
+
+    <p style="max-width:560px; font-size:1.1rem; line-height:1.75; color:var(--muted); margin-bottom:2.5rem;">
+      Cabinet de conseil en stratégie, pilotage de projets et transformation digitale. Un interlocuteur dédié, une expertise mobilisée à 100&nbsp;% pour votre projet.
+    </p>
+
+    <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-bottom:4rem;">
+      <a href="/contact" class="btn-gold">
+        Prendre contact
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <a href="#services" class="btn-outline-dark">
+        Nos services
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </a>
+    </div>
+
+    <!-- Piliers -->
+    <div style="display:flex; align-items:center; gap:2rem;">
+      {['Conseil','Transformation','Automatisation'].map((l, i) => (
+        <div style="display:flex; align-items:center; gap:2rem;">
+          <div style="display:flex; flex-direction:column; align-items:center; gap:.75rem;">
+            <div style="width:4rem; height:4rem; border-radius:50%; border:1px solid rgba(201,168,76,0.4); background:rgba(201,168,76,0.07); display:flex; align-items:center; justify-content:center;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+            </div>
+            <p style="font-size:.65rem; letter-spacing:.2em; text-transform:uppercase; color:rgba(201,168,76,0.8);">{l}</p>
+          </div>
+          {i < 2 && <div style="width:1px; height:2.5rem; background:rgba(201,168,76,0.2);"></div>}
+        </div>
+      ))}
+    </div>
+
+    <a href="#services" style="margin-top:3rem; display:flex; flex-direction:column; align-items:center; gap:.5rem; color:var(--muted); text-decoration:none;">
+      <span style="font-size:.65rem; letter-spacing:.2em; text-transform:uppercase;">Découvrir</span>
+      <span style="width:1px; height:2rem; background:linear-gradient(to bottom, #C9A84C, transparent);"></span>
+    </a>
+  </section>
+
+  <div class="gold-rule"></div>
+
+  <!-- SERVICES -->
+  <section id="services" style="background:var(--bg); padding:7rem 1.5rem;">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div class="reveal" style="text-align:center; margin-bottom:5rem;">
+        <p style="font-size:.7rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem;">Ce que nous faisons</p>
+        <h2 class="serif" style="font-size:clamp(2rem,4vw,3.2rem); font-weight:300; color:var(--text); margin-bottom:1.5rem;">
+          Trois piliers, <span class="gold-text" style="font-weight:600;">un seul objectif</span>
+        </h2>
+        <p style="max-width:38rem; margin:0 auto; color:var(--muted); font-size:1.05rem; line-height:1.7;">
+          Conseil, pilotage et transformation : nos expertises s'articulent pour couvrir l'intégralité de votre trajectoire de croissance.
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem;">
+        {[
+          { label:'CONSEIL',      title:'Conseil stratégique',            icon:'M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244', items:['Audit stratégique et diagnostic','Définition de feuille de route','Accompagnement à la décision','Restructuration et optimisation'] },
+          { label:'PILOTAGE',     title:'Pilotage de projets',            icon:'M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75z', items:['Chef de projet externalisé','Planification et gouvernance','Coordination des équipes','Reporting et pilotage KPIs'] },
+          { label:'AUTOMATISATION', title:'Automatisation & Image de marque', icon:'M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z', items:['Automatisation des workflows','Identité visuelle et stratégie','Transformation digitale','Intégration outils IA'] },
+        ].map(s => (
+          <div class="card reveal" style="padding:2.5rem;">
+            <div style="width:3.5rem; height:3.5rem; border-radius:50%; border:1px solid rgba(201,168,76,0.3); background:rgba(201,168,76,0.07); display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem;">
+              <svg width="24" height="24" fill="none" stroke="#C9A84C" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d={s.icon}/></svg>
+            </div>
+            <p style="font-size:.65rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:.5rem;">{s.label}</p>
+            <h3 class="serif" style="font-size:1.4rem; font-weight:600; color:var(--text); margin-bottom:1rem;">{s.title}</h3>
+            <div style="height:1px; width:2.5rem; background:linear-gradient(90deg,#C9A84C,transparent); margin-bottom:1.25rem; opacity:.6;"></div>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap:.75rem;">
+              {s.items.map(item => (
+                <li style="display:flex; align-items:flex-start; gap:.75rem; font-size:.9rem; color:var(--muted);">
+                  <svg style="flex-shrink:0; margin-top:2px;" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule"></div>
+
+  <!-- POURQUOI — layout éditorial sur fond chaud -->
+  <section style="background:var(--bg-alt); padding:7rem 1.5rem;">
+    <div style="max-width:1280px; margin:0 auto;">
+      <p class="reveal" style="font-size:.7rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-bottom:2rem;">Notre différence</p>
+      <div style="display:grid; grid-template-columns:3fr 2fr; gap:3rem; align-items:end; margin-bottom:5rem;">
+        <h2 class="serif reveal" style="font-size:clamp(3rem,6vw,5rem); font-weight:300; color:var(--text); line-height:1.05;">
+          Pourquoi<br/><span class="gold-text" style="font-weight:600; font-style:italic;">TKonsulting</span>
+        </h2>
+        <p class="reveal" style="color:var(--muted); line-height:1.7; font-size:.95rem;">
+          Dans un marché saturé de consultants, nous faisons le pari de la proximité, de la transparence et de l'engagement réel.
+        </p>
+      </div>
+
+      <!-- Chiffres -->
+      <div class="reveal" style="display:flex; border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:2.5rem 0; margin-bottom:4rem;">
+        {[
+          { val:'3+',  label:"Années d'activité" },
+          { val:'1',   label:'Interlocuteur dédié' },
+          { val:'24h', label:'Délai de réponse' },
+          { val:'0',   label:'Frais cachés' },
+        ].map((s, i) => (
+          <div style={`flex:1; text-align:center; ${i>0?'border-left:1px solid var(--border);':''} padding:0 2rem;`}>
+            <p class="serif gold-text" style="font-size:clamp(2.5rem,5vw,4rem); font-weight:700; line-height:1; margin-bottom:.5rem;">{s.val}</p>
+            <p style="font-size:.65rem; letter-spacing:.15em; text-transform:uppercase; color:var(--muted);">{s.label}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Liste numérotée -->
+      <div style="display:grid; grid-template-columns:1fr 1fr;" class="reveal">
+        {[
+          { n:'01', t:'Interlocuteur unique',    d:"Un seul point de contact du diagnostic à la livraison. Pas de sous-traitance opaque." },
+          { n:'02', t:'Approche sur mesure',     d:"Chaque mission est conçue pour vous, pas adaptée d'un modèle générique." },
+          { n:'03', t:'Expertise terrain',       d:"Nous avons piloté des projets complexes. Nous connaissons les obstacles avant qu'ils se présentent." },
+          { n:'04', t:'Engagement de moyens',    d:"La qualité de l'accompagnement prime sur toute promesse de résultat." },
+          { n:'05', t:'Communication directe',   d:"Reporting régulier, transparence totale. Vous ne découvrez jamais les mauvaises nouvelles trop tard." },
+          { n:'06', t:"Réseau d'experts",        d:"Accès à un écosystème de partenaires spécialisés : technique, juridique, financier, digital." },
+        ].map((d, i) => (
+          <div style={`display:flex; gap:1.25rem; padding:2rem 0; border-top:1px solid var(--border); ${i%2===0?'padding-right:4rem;':'padding-left:4rem; border-left:1px solid var(--border);'}`}>
+            <span class="serif" style="font-size:3rem; font-weight:700; line-height:1; flex-shrink:0; color:rgba(201,168,76,0.15);">{d.n}</span>
+            <div>
+              <p style="font-size:.65rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); margin-bottom:.5rem;">{d.t}</p>
+              <p style="font-size:.875rem; color:var(--muted); line-height:1.65;">{d.desc || d.d}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule"></div>
+
+  <!-- CTA -->
+  <section style="background:var(--bg); padding:7rem 1.5rem; text-align:center;">
+    <div style="max-width:700px; margin:0 auto;" class="reveal">
+      <p style="font-size:.7rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-bottom:1.5rem;">Démarrons</p>
+      <h2 class="serif" style="font-size:clamp(2.2rem,4vw,3.5rem); font-weight:300; color:var(--text); margin-bottom:1.5rem;">
+        Un projet ? Une question ?<br/>
+        <span class="gold-text" style="font-weight:600;">Parlons-en.</span>
+      </h2>
+      <p style="color:var(--muted); font-size:1rem; line-height:1.7; margin-bottom:2.5rem;">
+        Premier échange gratuit, 30 minutes, sans engagement. Nous répondons sous 24h.
+      </p>
+      <a href="/contact" class="btn-gold">
+        Prendre contact
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--bg-alt); border-top:1px solid var(--border); padding:3rem 1.5rem; text-align:center;">
+    <p style="font-size:.75rem; color:var(--muted);">
+      © 2025 TKonsulting. Tous droits réservés.
+      &nbsp;·&nbsp;
+      <a href="/mentions-legales" style="color:var(--muted); text-decoration:none;">Mentions légales</a>
+    </p>
+  </footer>
+
+  <!-- Bouton retour vers le thème sombre -->
+  <a href="/" class="badge-back">← Thème sombre</a>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(
+      entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } }),
+      { threshold: 0.1 }
+    );
+    reveals.forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
