@@ -16,7 +16,11 @@ const links = [
     <!-- Logo -->
     <a href="/" class="flex items-center gap-1 shrink-0" aria-label="TKonsulting accueil">
       <span class="font-serif text-xl font-semibold tracking-widest">
-        <span class="text-gold-grad">TK</span><span class="text-white font-light tracking-wider">ONSULTING</span>
+        <span class="text-gold-grad">TK</span><span
+          id="nav-wordmark"
+          class="text-white font-light tracking-wider"
+          style="transition: color 0.3s ease;"
+        >ONSULTING</span>
       </span>
     </a>
 
@@ -26,7 +30,7 @@ const links = [
         <li>
           <a
             href={l.href}
-            class="text-sm font-medium tracking-widest uppercase text-tk-muted hover:text-tk-gold-light transition-colors duration-200"
+            class="nav-link text-sm font-medium tracking-widest uppercase text-tk-muted hover:text-tk-gold-light transition-colors duration-200"
           >
             {l.label}
           </a>
@@ -55,14 +59,15 @@ const links = [
   <!-- Mobile menu -->
   <div
     id="mobile-menu"
-    class="hidden md:hidden bg-tk-dark border-t border-tk-border px-6 pb-6"
+    class="hidden md:hidden border-t border-tk-border px-6 pb-6"
+    style="background: #0A0A0A; transition: background 0.3s ease;"
   >
     <ul class="flex flex-col gap-4 pt-4">
       {links.map(l => (
         <li>
           <a
             href={l.href}
-            class="block text-sm font-medium tracking-widest uppercase text-tk-muted hover:text-tk-gold transition-colors py-2"
+            class="nav-link-mobile block text-sm font-medium tracking-widest uppercase text-tk-muted hover:text-tk-gold transition-colors py-2"
           >
             {l.label}
           </a>
@@ -78,26 +83,52 @@ const links = [
   </div>
 </header>
 
+<style is:global>
+  /* Nav ivoire au scroll */
+  #site-header.nav-light .nav-link {
+    color: #78716c;
+  }
+  #site-header.nav-light .nav-link:hover {
+    color: #C9A84C;
+  }
+  #site-header.nav-light .nav-link-mobile {
+    color: #57534e;
+  }
+  #site-header.nav-light .nav-link-mobile:hover {
+    color: #C9A84C;
+  }
+</style>
+
 <script>
-  const header  = document.getElementById('site-header')!;
-  const burger  = document.getElementById('burger')!;
-  const menu    = document.getElementById('mobile-menu')!;
+  const header   = document.getElementById('site-header')!;
+  const burger   = document.getElementById('burger')!;
+  const menu     = document.getElementById('mobile-menu')!;
+  const wordmark = document.getElementById('nav-wordmark')!;
   const b1 = document.getElementById('b1')!;
   const b2 = document.getElementById('b2')!;
   const b3 = document.getElementById('b3')!;
 
-  // Scroll: add frosted glass background after 60px
-  window.addEventListener('scroll', () => {
+  function applyScrollState() {
     if (window.scrollY > 60) {
-      header.style.background = 'rgba(10,10,10,0.92)';
-      header.style.backdropFilter = 'blur(12px)';
-      header.style.borderBottom = '1px solid rgba(201,168,76,0.08)';
+      header.style.background    = 'rgba(247, 243, 236, 0.97)';
+      header.style.backdropFilter = 'blur(16px)';
+      header.style.borderBottom  = '1px solid rgba(201,168,76,0.18)';
+      header.classList.add('nav-light');
+      wordmark.style.color = '#1c1917';
+      menu.style.background = '#F7F3EC';
     } else {
-      header.style.background = 'transparent';
+      header.style.background    = 'transparent';
       header.style.backdropFilter = 'none';
-      header.style.borderBottom = 'none';
+      header.style.borderBottom  = 'none';
+      header.classList.remove('nav-light');
+      wordmark.style.color = '';
+      menu.style.background = '#0A0A0A';
     }
-  }, { passive: true });
+  }
+
+  // Init + scroll
+  applyScrollState();
+  window.addEventListener('scroll', applyScrollState, { passive: true });
 
   // Burger toggle
   let open = false;
