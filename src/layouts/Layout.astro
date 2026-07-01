@@ -160,19 +160,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,168,76,0.1);
       }
 
-      /* Sections ivoire — override card-glass pour fond clair */
+      /* Sections accent sombre chaud — crée du rythme sans rupture de couleur */
       .section-light {
-        background: #F7F3EC;
-      }
-      .section-light .card-glass {
-        background: rgba(255, 255, 255, 0.92);
-        border-color: rgba(0, 0, 0, 0.07);
-        backdrop-filter: none;
-      }
-      .section-light .card-glass:hover {
-        border-color: rgba(201,168,76,0.4);
-        box-shadow: 0 12px 40px rgba(0,0,0,0.08), 0 0 0 1px rgba(201,168,76,0.1);
-        transform: translateY(-4px);
+        background: #16130D;
       }
 
       /* Scrollbar */

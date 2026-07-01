@@ -35,58 +35,58 @@ const steps = [
 ];
 ---
 <section id="methode" class="section-light relative py-28 md:py-36 overflow-hidden">
+  <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-tk-gold/20 to-transparent"></div>
 
-  <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-tk-gold/25 to-transparent"></div>
-  <div class="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-tk-gold/25 to-transparent"></div>
+  <!-- Gold glow -->
+  <div
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"
+    style="background: radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 70%);"
+  ></div>
 
   <div class="max-w-7xl mx-auto px-6 lg:px-12">
 
     <!-- Header -->
     <div class="text-center mb-20 reveal">
       <p class="text-xs tracking-[0.3em] uppercase text-tk-gold mb-4">Notre approche</p>
-      <h2 class="font-serif font-light text-4xl md:text-5xl text-stone-900 mb-6">
+      <h2 class="font-serif font-light text-4xl md:text-5xl text-white mb-6">
         Une méthode <span class="text-gold-grad font-semibold">en 4 étapes</span>
       </h2>
-      <p class="max-w-xl mx-auto text-stone-500 text-lg leading-relaxed">
+      <p class="max-w-xl mx-auto text-tk-muted text-lg leading-relaxed">
         Rigoureuse et adaptable, notre démarche transforme chaque engagement en valeur mesurable.
       </p>
     </div>
 
     <!-- Steps -->
     <div class="relative">
-      <!-- Connector line (desktop only) -->
       <div
         class="hidden lg:block absolute top-10 left-[calc(12.5%+32px)] right-[calc(12.5%+32px)] h-px"
-        style="background: linear-gradient(90deg, transparent, rgba(201,168,76,0.35) 20%, rgba(201,168,76,0.35) 80%, transparent);"
+        style="background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3) 20%, rgba(201,168,76,0.3) 80%, transparent);"
       ></div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6">
         {steps.map((step, i) => (
           <div class="reveal relative flex flex-col items-center text-center" style={`transition-delay: ${i * 100}ms;`}>
-
-            <!-- Number circle -->
             <div class="relative z-10 mb-6">
               <div
                 class="w-20 h-20 rounded-full flex items-center justify-center"
-                style="background: linear-gradient(135deg, rgba(201,168,76,0.18), rgba(201,168,76,0.06)); border: 1px solid rgba(201,168,76,0.35);"
+                style="background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05)); border: 1px solid rgba(201,168,76,0.3);"
               >
                 <span class="font-serif text-2xl font-bold text-gold-grad">{step.num}</span>
               </div>
-              <!-- Icon overlay — fond ivoire pour correspondre à la section -->
               <div
                 class="absolute -bottom-1 -right-1 w-8 h-8 rounded-full flex items-center justify-center"
-                style="background: #F7F3EC; border: 1px solid rgba(201,168,76,0.4);"
+                style="background: #16130D; border: 1px solid rgba(201,168,76,0.4);"
               >
                 <span class="text-tk-gold" set:html={step.icon} style="transform: scale(0.65);" />
               </div>
             </div>
-
-            <h3 class="font-serif text-2xl font-semibold text-stone-900 mb-3">{step.title}</h3>
-            <p class="text-stone-500 text-base leading-relaxed">{step.desc}</p>
+            <h3 class="font-serif text-2xl font-semibold text-white mb-3">{step.title}</h3>
+            <p class="text-tk-muted text-base leading-relaxed">{step.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </div>
 
+  <div class="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-tk-gold/20 to-transparent"></div>
 </section>

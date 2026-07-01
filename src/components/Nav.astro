@@ -110,19 +110,13 @@ const links = [
 
   function applyScrollState() {
     if (window.scrollY > 60) {
-      header.style.background    = 'rgba(247, 243, 236, 0.97)';
-      header.style.backdropFilter = 'blur(16px)';
-      header.style.borderBottom  = '1px solid rgba(201,168,76,0.18)';
-      header.classList.add('nav-light');
-      wordmark.style.color = '#1c1917';
-      menu.style.background = '#F7F3EC';
+      header.style.background    = 'rgba(10,10,10,0.92)';
+      header.style.backdropFilter = 'blur(12px)';
+      header.style.borderBottom  = '1px solid rgba(201,168,76,0.08)';
     } else {
       header.style.background    = 'transparent';
       header.style.backdropFilter = 'none';
       header.style.borderBottom  = 'none';
-      header.classList.remove('nav-light');
-      wordmark.style.color = '';
-      menu.style.background = '#0A0A0A';
     }
   }
 
