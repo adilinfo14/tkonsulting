@@ -31,16 +31,32 @@ const features = [
 ];
 
 const atouts = [
-  { icon: '⚡', label: 'Délai maîtrisé',       desc: 'Sites livrés en 1 à 3 semaines, applications selon complexité.' },
-  { icon: '🇫🇷', label: 'Infra 100% France',   desc: 'Hébergement sur serveurs français. SSL inclus, RGPD natif.' },
-  { icon: '🔧', label: 'Maintenance incluse',   desc: 'Monitoring, mises à jour et support réactif sur tous nos projets.' },
-  { icon: '💬', label: 'Tarif sur devis',       desc: 'Chaque projet est unique. Contactez-nous pour un devis personnalisé.' },
+  {
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 12V6M12 12l4 2"/></svg>`,
+    label: 'Délai maîtrisé',
+    desc: 'Sites livrés en 1 à 3 semaines, applications selon complexité.',
+  },
+  {
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="5"/><path stroke-linecap="round" stroke-linejoin="round" d="M7 12L2 21h20l-5-9"/></svg>`,
+    label: 'Infra 100% France',
+    desc: 'Hébergement sur serveurs français. SSL inclus, RGPD natif.',
+  },
+  {
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="2"/></svg>`,
+    label: 'Maintenance incluse',
+    desc: 'Monitoring, mises à jour et support réactif sur tous nos projets.',
+  },
+  {
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 4h18v12H9l-5 4V16H3z"/></svg>`,
+    label: 'Tarif sur devis',
+    desc: 'Chaque projet est unique. Contactez-nous pour un devis personnalisé.',
+  },
 ];
 ---
 <section id="developpement" class="relative py-28 md:py-36 overflow-hidden">
   <!-- Background -->
   <div class="absolute inset-0 pointer-events-none"
-    style="background: linear-gradient(180deg, #0A0A0A 0%, #0D0C0A 50%, #0A0A0A 100%);">
+    style="background: linear-gradient(180deg, #0B0F17 0%, #111827 50%, #0B0F17 100%);">
   </div>
   <!-- Top border -->
   <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-tk-gold/20 to-transparent"></div>
@@ -72,8 +88,13 @@ const atouts = [
       <!-- Atouts cards -->
       <div class="grid grid-cols-2 gap-4 reveal" style="transition-delay: 150ms;">
         {atouts.map(a => (
-          <div class="card-glass p-5">
-            <p class="text-2xl mb-3">{a.icon}</p>
+          <div class="card-glass-dark p-5">
+            <div
+              class="w-9 h-9 rounded-lg flex items-center justify-center mb-3"
+              style="background: rgba(91,127,166,0.08); border: 1px solid rgba(91,127,166,0.15);"
+            >
+              <span class="text-tk-gold" set:html={a.icon} />
+            </div>
             <p class="text-sm font-semibold text-white mb-2">{a.label}</p>
             <p class="text-xs text-tk-muted leading-relaxed">{a.desc}</p>
           </div>
@@ -84,10 +105,10 @@ const atouts = [
     <!-- Features grid -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
       {features.map((f, i) => (
-        <div class="reveal card-glass p-6" style={`transition-delay: ${i * 80}ms;`}>
+        <div class="reveal card-glass-dark p-6" style={`transition-delay: ${i * 80}ms;`}>
           <div
             class="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
-            style="background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.15);"
+            style="background: rgba(91,127,166,0.08); border: 1px solid rgba(91,127,166,0.15);"
           >
             <span class="text-tk-gold" set:html={f.icon} />
           </div>
@@ -116,7 +137,7 @@ const atouts = [
           href="https://lesensia.com"
           target="_blank"
           rel="noopener noreferrer"
-          class="card-glass group overflow-hidden block"
+          class="card-glass-dark group overflow-hidden block"
         >
           <!-- Preview banner -->
           <div
@@ -150,17 +171,17 @@ const atouts = [
             </p>
             <div class="flex flex-wrap gap-2">
               {['SaaS', 'IA intégrée', 'React', 'FastAPI', 'PostgreSQL'].map(t => (
-                <span class="text-xs px-2 py-0.5" style="background: rgba(201,168,76,0.08); color: rgba(201,168,76,0.8); border: 1px solid rgba(201,168,76,0.15);">{t}</span>
+                <span class="text-xs px-2 py-0.5" style="background: rgba(91,127,166,0.08); color: rgba(91,127,166,0.8); border: 1px solid rgba(91,127,166,0.15);">{t}</span>
               ))}
             </div>
           </div>
         </a>
 
         <!-- TKonsulting.fr (this site) -->
-        <div class="card-glass overflow-hidden">
+        <div class="card-glass-dark overflow-hidden">
           <div
             class="relative h-44 flex items-center justify-center overflow-hidden"
-            style="background: linear-gradient(135deg, #0A0A0A 0%, #161410 50%, #0A0A0A 100%);"
+            style="background: linear-gradient(135deg, #0B0F17 0%, #111827 50%, #0B0F17 100%);"
           >
             <div class="text-center">
               <p class="font-serif text-2xl font-bold text-gold-grad mb-1">TKonsulting</p>
@@ -180,7 +201,7 @@ const atouts = [
             </p>
             <div class="flex flex-wrap gap-2">
               {['Astro 5', 'Tailwind CSS', 'Static', 'SEO'].map(t => (
-                <span class="text-xs px-2 py-0.5" style="background: rgba(201,168,76,0.08); color: rgba(201,168,76,0.8); border: 1px solid rgba(201,168,76,0.15);">{t}</span>
+                <span class="text-xs px-2 py-0.5" style="background: rgba(91,127,166,0.08); color: rgba(91,127,166,0.8); border: 1px solid rgba(91,127,166,0.15);">{t}</span>
               ))}
             </div>
           </div>
@@ -189,7 +210,7 @@ const atouts = [
         <!-- Slot prochain projet -->
         <a
           href="/contact"
-          class="card-glass overflow-hidden group flex flex-col"
+          class="card-glass-dark overflow-hidden group flex flex-col"
           style="border-style: dashed;"
         >
           <div
@@ -198,7 +219,7 @@ const atouts = [
           >
             <div
               class="w-14 h-14 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-              style="background: rgba(201,168,76,0.08); border: 1px dashed rgba(201,168,76,0.3);"
+              style="background: rgba(91,127,166,0.08); border: 1px dashed rgba(91,127,166,0.3);"
             >
               <svg class="text-tk-gold" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>

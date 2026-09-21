@@ -4,17 +4,27 @@
   <!-- Gold background glow -->
   <div
     class="absolute inset-0 pointer-events-none"
-    style="background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,168,76,0.07) 0%, transparent 70%);"
+    style="background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(91,127,166,0.07) 0%, transparent 70%);"
   ></div>
 
   <!-- Subtle corner lines -->
   <div class="absolute top-0 left-0 w-32 h-32 border-l border-t border-tk-gold/10 pointer-events-none"></div>
   <div class="absolute bottom-0 right-0 w-32 h-32 border-r border-b border-tk-gold/10 pointer-events-none"></div>
 
+  <!-- Traînée de points (motif du monogramme) -->
+  <div class="hidden md:block absolute bottom-16 right-16 w-40 h-40 pointer-events-none" aria-hidden="true">
+    <span class="absolute rounded-full bg-tk-gold/25" style="width:11px;height:11px; left:8%; bottom:10%;"></span>
+    <span class="absolute rounded-full bg-tk-gold/22" style="width:9px;height:9px; left:20%; bottom:24%;"></span>
+    <span class="absolute rounded-full bg-tk-gold/20" style="width:7px;height:7px; left:32%; bottom:38%;"></span>
+    <span class="absolute rounded-full bg-tk-gold/16" style="width:5.5px;height:5.5px; left:44%; bottom:52%;"></span>
+    <span class="absolute rounded-full bg-tk-gold/12" style="width:4px;height:4px; left:56%; bottom:66%;"></span>
+    <span class="absolute rounded-full bg-tk-gold/8" style="width:2.5px;height:2.5px; left:66%; bottom:78%;"></span>
+  </div>
+
   <div class="relative max-w-4xl mx-auto px-6 text-center reveal">
     <p class="text-xs tracking-[0.3em] uppercase text-tk-gold mb-6">Passez à l'action</p>
 
-    <h2 class="font-serif font-light text-4xl md:text-6xl text-white mb-6 leading-tight">
+    <h2 class="font-serif font-light text-4xl md:text-6xl text-tk-text mb-6 leading-tight">
       Prêt à transformer<br/>
       <span class="text-gold-grad font-semibold">votre ambition en résultats ?</span>
     </h2>
@@ -31,7 +41,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
         </svg>
       </a>
-      <a href="mailto:tkonsulting79@gmail.com" class="btn-outline text-sm">
+      <a href="mailto:contact@tkonsulting.fr" class="btn-outline-dark text-sm">
         Email direct
       </a>
     </div>

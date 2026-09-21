@@ -62,13 +62,13 @@ const outcomes = [
   <!-- Subtle grid background -->
   <div
     class="absolute inset-0 opacity-[0.02] pointer-events-none"
-    style="background-image: radial-gradient(rgba(201,168,76,1) 1px, transparent 1px); background-size: 32px 32px;"
+    style="background-image: radial-gradient(rgba(91,127,166,1) 1px, transparent 1px); background-size: 32px 32px;"
   ></div>
 
   <!-- Ambient glow left -->
   <div
     class="absolute -left-40 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"
-    style="background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%);"
+    style="background: radial-gradient(circle, rgba(91,127,166,0.05) 0%, transparent 70%);"
   ></div>
 
   <div class="relative max-w-7xl mx-auto px-6 lg:px-12">
@@ -78,7 +78,7 @@ const outcomes = [
 
       <div class="reveal">
         <p class="text-xs tracking-[0.3em] uppercase text-tk-gold mb-4">Knowledge Management</p>
-        <h2 class="font-serif font-light text-4xl md:text-5xl text-white mb-6 leading-tight">
+        <h2 class="font-serif font-light text-4xl md:text-5xl text-tk-text mb-6 leading-tight">
           Votre savoir-faire est<br/>
           <span class="text-gold-grad font-semibold">votre actif le plus précieux.</span><br/>
           <span class="font-light text-3xl md:text-4xl text-tk-muted">Est-il bien protégé ?</span>
@@ -94,18 +94,18 @@ const outcomes = [
         <!-- ISO badge -->
         <div
           class="flex items-center gap-4 p-5"
-          style="background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.2);"
+          style="background: rgba(91,127,166,0.06); border: 1px solid rgba(91,127,166,0.2);"
         >
           <div
             class="w-14 h-14 shrink-0 flex items-center justify-center rounded-full"
-            style="background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3);"
+            style="background: rgba(91,127,166,0.1); border: 1px solid rgba(91,127,166,0.3);"
           >
             <svg class="text-tk-gold" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/>
             </svg>
           </div>
           <div>
-            <p class="font-semibold text-white text-sm">Référentiel ISO 30401</p>
+            <p class="font-semibold text-tk-text text-sm">Référentiel ISO 30401</p>
             <p class="text-xs text-tk-muted leading-relaxed">
               Nos démarches s'appuient sur la norme internationale de management des connaissances — gage de rigueur et d'alignement avec les meilleures pratiques mondiales.
             </p>
@@ -141,7 +141,7 @@ const outcomes = [
           <!-- Background number (watermark) — bien visible -->
           <span
             class="absolute top-2 right-4 font-serif font-bold select-none pointer-events-none"
-            style="font-size: 5rem; line-height: 1; color: rgba(201,168,76,0.13);"
+            style="font-size: 5rem; line-height: 1; color: rgba(91,127,166,0.13);"
           >
             {p.num}
           </span>
@@ -149,7 +149,7 @@ const outcomes = [
           <!-- Icon -->
           <div
             class="w-12 h-12 rounded-lg flex items-center justify-center mb-5"
-            style="background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2);"
+            style="background: rgba(91,127,166,0.08); border: 1px solid rgba(91,127,166,0.2);"
           >
             <span class="text-tk-gold" set:html={p.icon} />
           </div>
@@ -157,13 +157,13 @@ const outcomes = [
           <!-- Step number pill -->
           <p class="text-sm font-semibold tracking-[0.25em] text-tk-gold mb-3">{p.num}</p>
 
-          <h3 class="font-semibold text-white text-lg mb-3 group-hover:text-tk-gold-light transition-colors">{p.title}</h3>
+          <h3 class="font-semibold text-tk-text text-lg mb-3 group-hover:text-tk-gold-light transition-colors">{p.title}</h3>
           <p class="text-base text-tk-muted leading-relaxed">{p.desc}</p>
 
           <!-- Bottom gold accent on hover -->
           <div
             class="absolute bottom-0 left-0 h-0.5 w-0 group-hover:w-full transition-all duration-500"
-            style="background: linear-gradient(90deg, #C9A84C, #E2C97A);"
+            style="background: linear-gradient(90deg, #5B7FA6, #82A2C4);"
           ></div>
         </div>
       ))}
@@ -172,10 +172,10 @@ const outcomes = [
     <!-- CTA inline -->
     <div
       class="reveal flex flex-col md:flex-row items-center justify-between gap-8 p-8 lg:p-10"
-      style="background: rgba(201,168,76,0.04); border: 1px solid rgba(201,168,76,0.15);"
+      style="background: rgba(91,127,166,0.04); border: 1px solid rgba(91,127,166,0.15);"
     >
       <div>
-        <p class="font-serif text-2xl text-white mb-2">
+        <p class="font-serif text-2xl text-tk-text mb-2">
           Vous voulez valoriser votre capital immatériel ?
         </p>
         <p class="text-tk-muted text-sm">

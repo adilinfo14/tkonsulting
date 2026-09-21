@@ -38,7 +38,7 @@ const services = [
   <!-- Subtle grid -->
   <div
     class="absolute inset-0 opacity-[0.025] pointer-events-none"
-    style="background-image: linear-gradient(rgba(201,168,76,1) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,1) 1px, transparent 1px); background-size: 60px 60px;"
+    style="background-image: linear-gradient(rgba(91,127,166,1) 1px, transparent 1px), linear-gradient(90deg, rgba(91,127,166,1) 1px, transparent 1px); background-size: 60px 60px;"
   ></div>
 
   <div class="relative max-w-7xl mx-auto px-6 lg:px-12">
@@ -46,7 +46,7 @@ const services = [
     <!-- Header -->
     <div class="text-center mb-20 reveal">
       <p class="text-xs tracking-[0.3em] uppercase text-tk-gold mb-4">Ce que nous faisons</p>
-      <h2 class="font-serif font-light text-4xl md:text-5xl text-white mb-6">
+      <h2 class="font-serif font-light text-4xl md:text-5xl text-tk-text mb-6">
         Trois piliers, <span class="text-gold-grad font-semibold">un seul objectif</span>
       </h2>
       <p class="max-w-xl mx-auto text-tk-muted text-lg leading-relaxed">
@@ -63,12 +63,12 @@ const services = [
         >
           <div
             class="w-16 h-16 rounded-full flex items-center justify-center mb-6"
-            style="background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2);"
+            style="background: rgba(91,127,166,0.08); border: 1px solid rgba(91,127,166,0.2);"
           >
             <span class="text-tk-gold" set:html={s.icon} />
           </div>
           <p class="text-xs tracking-[0.25em] uppercase text-tk-gold mb-2">{s.label}</p>
-          <h3 class="font-serif text-2xl font-semibold text-white mb-4">{s.title}</h3>
+          <h3 class="font-serif text-2xl font-semibold text-tk-text mb-4">{s.title}</h3>
           <p class="text-tk-muted text-base leading-relaxed mb-6">{s.desc}</p>
           <div class="h-px w-10 bg-gradient-to-r from-tk-gold to-transparent mb-6 opacity-60"></div>
           <ul class="space-y-3">

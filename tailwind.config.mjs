@@ -4,23 +4,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        'tk-black':      '#0A0A0A',
-        'tk-dark':       '#111111',
-        'tk-card':       '#161616',
-        'tk-border':     '#1F1F1F',
-        'tk-gold':       '#C9A84C',
-        'tk-gold-light': '#E2C97A',
-        'tk-gold-dark':  '#8B6A14',
-        'tk-muted':      '#6B7280',
-        'tk-text':       '#E8E8E8',
+        'tk-black':      '#FEFCF8',
+        'tk-dark':       '#F9F5EE',
+        'tk-card':       '#FFFFFF',
+        'tk-border':     '#E8E2D6',
+        'tk-gold':       '#5B7FA6',
+        'tk-gold-light': '#82A2C4',
+        'tk-gold-dark':  '#3E5C7D',
+        'tk-muted':      '#6B6560',
+        'tk-text':       '#1A1714',
+        'tk-night':      '#0B0F17',
+        'tk-night-alt':  '#111827',
       },
       fontFamily: {
         serif:  ['Cormorant Garamond', 'Georgia', 'serif'],
         sans:   ['Inter', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        'gold-gradient': 'linear-gradient(135deg, #C9A84C 0%, #E2C97A 40%, #C9A84C 80%, #A8872A 100%)',
-        'gold-shine':    'linear-gradient(90deg, transparent 0%, rgba(226,201,122,0.15) 50%, transparent 100%)',
+        'gold-gradient': 'linear-gradient(135deg, #5B7FA6 0%, #82A2C4 50%, #3E5C7D 100%)',
+        'gold-shine':    'linear-gradient(90deg, transparent 0%, rgba(130,162,196,0.12) 50%, transparent 100%)',
       },
       animation: {
         'float-slow':  'float 6s ease-in-out infinite',

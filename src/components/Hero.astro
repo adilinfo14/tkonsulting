@@ -23,7 +23,7 @@ const pilliers = [
 <section
   id="hero"
   class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
-  style="background: radial-gradient(ellipse 90% 70% at 50% 45%, #100F0C 0%, #0A0A0A 65%);"
+  style="background: radial-gradient(ellipse 90% 70% at 50% 45%, #111827 0%, #0B0F17 65%);"
 >
   <!-- Particle trail -->
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
@@ -41,40 +41,22 @@ const pilliers = [
   <!-- Diag gold line -->
   <div class="absolute pointer-events-none" aria-hidden="true"
     style="top:50%;left:54%;width:350px;height:1px;
-           background:linear-gradient(90deg,transparent,rgba(201,168,76,0.1),transparent);
+           background:linear-gradient(90deg,transparent,rgba(91,127,166,0.1),transparent);
            transform:rotate(-35deg);">
   </div>
 
   <!-- Content -->
   <div class="relative z-10 w-full max-w-4xl mx-auto px-6 text-center pt-28 pb-24">
 
-    <!-- Logo image -->
-    <div class="flex justify-center mb-6">
-      <img
-        src="/logo-tk.png"
-        alt="TKonsulting"
-        class="h-44 md:h-56 w-auto drop-shadow-[0_0_50px_rgba(201,168,76,0.3)]"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-      />
-      <div style="display:none;" class="flex flex-col items-center gap-0">
-        <div
-          class="w-44 h-44 rounded-full flex items-center justify-center"
-          style="border: 1.5px solid #C9A84C; background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);"
-        >
-          <span class="font-serif text-7xl font-bold text-gold-grad leading-none">TK</span>
-        </div>
-      </div>
-    </div>
-
     <!-- Diamond separator -->
     <div class="flex items-center justify-center gap-4 mb-3">
       <div class="h-px w-20 bg-gradient-to-r from-transparent to-tk-gold opacity-40"></div>
-      <svg width="7" height="7" viewBox="0 0 8 8" fill="#C9A84C" opacity="0.7"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
+      <svg width="7" height="7" viewBox="0 0 8 8" fill="#5B7FA6" opacity="0.7"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
       <div class="h-px w-20 bg-gradient-to-l from-transparent to-tk-gold opacity-40"></div>
     </div>
 
     <!-- Tagline -->
-    <p class="text-xs md:text-sm tracking-[0.28em] uppercase mb-8" style="color:rgba(201,168,76,0.7);">
+    <p class="text-xs md:text-sm tracking-[0.28em] uppercase mb-8" style="color:rgba(91,127,166,0.7);">
       Stratégie &nbsp;·&nbsp; Projets &nbsp;·&nbsp; Image de Marque
     </p>
 
@@ -114,14 +96,14 @@ const pilliers = [
           <div class="flex flex-col items-center gap-3">
             <div
               class="w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center"
-              style="border: 1px solid rgba(201,168,76,0.35); background: rgba(201,168,76,0.06);"
+              style="border: 1px solid rgba(91,127,166,0.35); background: rgba(91,127,166,0.06);"
             >
               <span class="text-tk-gold" set:html={p.icon} />
             </div>
-            <p class="text-xs tracking-[0.22em] uppercase" style="color:rgba(201,168,76,0.75);">{p.label}</p>
+            <p class="text-xs tracking-[0.22em] uppercase" style="color:rgba(91,127,166,0.75);">{p.label}</p>
           </div>
           {i < 2 && (
-            <div class="self-center w-px h-10 mt-1" style="background: rgba(201,168,76,0.2);"></div>
+            <div class="self-center w-px h-10 mt-1" style="background: rgba(91,127,166,0.2);"></div>
           )}
         </>
       ))}
@@ -141,7 +123,7 @@ const pilliers = [
   .particle {
     position: absolute;
     border-radius: 50%;
-    background: radial-gradient(circle, #E2C97A 0%, #C9A84C 55%, transparent 100%);
+    background: radial-gradient(circle, #82A2C4 0%, #5B7FA6 55%, transparent 100%);
     animation: pfloat var(--dur) ease-in-out infinite var(--del);
     opacity: 0.75;
   }
